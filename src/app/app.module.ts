@@ -11,6 +11,10 @@ import {ToastModule} from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ChartModule} from 'primeng/chart';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {ScrollTopModule} from 'primeng/scrolltop';
+
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import {ChartModule} from 'primeng/chart';
     ToastModule,
     MessagesModule,
     MessageModule,
-    ChartModule
+    ChartModule,
+    ProgressBarModule,
+    ProgressSpinnerModule,
+    ScrollTopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

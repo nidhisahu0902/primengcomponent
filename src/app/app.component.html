@@ -40,7 +40,29 @@
 <!---------------------chart---------->
 
 <p-chart type="doughnut" [data]="data"></p-chart>
+<p-chart type="polarArea" [data]="data"></p-chart>
 
+<!-------------------------------progress bar-------------->
+<p-toast></p-toast>
+
+<div class="card">
+    <h5>Dynamic</h5>
+    <p-progressBar [value]="value"></p-progressBar>
+
+    <h5>Static</h5>
+    <p-progressBar [value]="50"></p-progressBar>
+
+    <h5>Indeterminate</h5>
+    <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+</div>
+
+<!-------------------------spinner--------------->
+<h5>Basic</h5>
+<p-progressSpinner></p-progressSpinner>
+
+<h5>Custom</h5>
+<p-progressSpinner [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+<!----------------scroll top------------->
 
 
 

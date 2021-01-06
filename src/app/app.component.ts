@@ -18,6 +18,7 @@ export class AppComponent {
   title = 'exampl2ongprime';
 
   data: any;
+  value: number = 0;
   constructor(private primengConfig: PrimeNGConfig,private messageService: MessageService) {
 
     /*******************chart*********** */
@@ -49,6 +50,14 @@ export class AppComponent {
 ngOnInit() {
       
         this.primengConfig.ripple = true;
+        let interval = setInterval(() => {
+          this.value = this.value + Math.floor(Math.random() * 10) + 1;
+          if (this.value >= 100) {
+              this.value = 100;
+              this.messageService.add({severity: 'info', summary: 'Success', detail: 'Process Completed'});
+              clearInterval(interval);
+          }
+      }, 2000);
     }
 
     addMessages() {
@@ -63,6 +72,7 @@ ngOnInit() {
   clearMessages() {
       this.msgs2 = [];
   }
+  
 
 }
 
