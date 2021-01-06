@@ -28,7 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
+             
             ],
             "scripts": []
           },
@@ -92,7 +96,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
           }
@@ -123,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "exampl2ongprime"
+    }
+  },
+  "defaultProject": "exampl2ongprime",
+  "cli": {
+    "analytics": "73855fc5-8c59-4d69-bc9b-73d622f2e8ec"
+  }
 }
