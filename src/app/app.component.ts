@@ -12,7 +12,17 @@ import {Message,MessageService} from 'primeng/api';
 })
 export class AppComponent {
 
+  visibleSidebar1;
 
+  visibleSidebar2;
+
+  visibleSidebar3;
+
+  visibleSidebar4;
+
+  visibleSidebar5;
+
+  
 /*88888888888 show messages ***************************************/
   msgs2: Message[];
   title = 'exampl2ongprime';

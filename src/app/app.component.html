@@ -62,7 +62,44 @@
 
 <h5>Custom</h5>
 <p-progressSpinner [style]="{width: '50px', height: '50px'}" styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
-<!----------------scroll top------------->
+<!----------------sidebar------------->
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Left Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar1 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar1 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
+
+<p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Right Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar2 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar2 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
+
+<p-sidebar [(visible)]="visibleSidebar3" position="top" [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Top Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar3 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar3 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
+
+<p-sidebar [(visible)]="visibleSidebar4" position="bottom" [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Bottom Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar4 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar4 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
+
+<p-sidebar [(visible)]="visibleSidebar5" [fullScreen]="true" [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Full Screen Sidebar</h1>
+    <p-button type="button" (click)="visibleSidebar5 = false" label="Save" styleClass="p-button-success"></p-button>
+    <p-button type="button" (click)="visibleSidebar5 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
+
+<p-button type="button" (click)="visibleSidebar1 = true" icon="pi pi-arrow-right"></p-button>
+<p-button type="button" (click)="visibleSidebar2 = true" icon="pi pi-arrow-left"></p-button>
+<p-button type="button" (click)="visibleSidebar3 = true" icon="pi pi-arrow-down"></p-button>
+<p-button type="button" (click)="visibleSidebar4 = true" icon="pi pi-arrow-up"></p-button>
+<p-button type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></p-button>
+
+<!--------------------------rating-------------------->
 
 
 

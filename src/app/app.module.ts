@@ -13,6 +13,8 @@ import {MessageModule} from 'primeng/message';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ScrollTopModule} from 'primeng/scrolltop';
+import {SidebarModule} from 'primeng/sidebar';
+
 
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
@@ -31,7 +33,10 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     ChartModule,
     ProgressBarModule,
     ProgressSpinnerModule,
-    ScrollTopModule
+    ScrollTopModule,
+    SidebarModule,
+  
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
