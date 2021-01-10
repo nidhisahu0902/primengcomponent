@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {PanelMenuModule} from 'primeng/panelmenu';
+import {MenubarModule} from 'primeng/menubar';
+import {RouterModule} from '@angular/router';
+import {MegaMenuModule} from 'primeng/megamenu';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
@@ -14,7 +18,8 @@ import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ScrollTopModule} from 'primeng/scrolltop';
 import {SidebarModule} from 'primeng/sidebar';
-
+import {GalleriaModule} from 'primeng/galleria';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
@@ -35,7 +40,12 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     ProgressSpinnerModule,
     ScrollTopModule,
     SidebarModule,
-  
+    GalleriaModule,
+    BreadcrumbModule,
+    MegaMenuModule,
+    MenubarModule,
+    PanelMenuModule,
+    
   
   ],
   providers: [],

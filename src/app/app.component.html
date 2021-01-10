@@ -99,9 +99,40 @@
 <p-button type="button" (click)="visibleSidebar4 = true" icon="pi pi-arrow-up"></p-button>
 <p-button type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></p-button>
 
-<!--------------------------rating-------------------->
+<!-------------------------gallery------------------->
 
+<p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}" [numVisible]="5"> 
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.previewImageSrc" style="width: 100%;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="p-grid p-nogutter p-justify-center">
+            <img [src]="item.thumbnailImageSrc" />
+        </div>
+    </ng-template>
+</p-galleria>
+<!----------------------------breadcrumb-------------------->
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
 
+<!---------------mega menu-------------->
 
+<h5>Horizontal</h5>
+<p-megaMenu [model]="itemsmega"></p-megaMenu>
 
+<h5>Vertical</h5>
+<p-megaMenu [model]="itemsmega" orientation="vertical"></p-megaMenu>
+
+<!---------------menubar--------------------------->
+<p-menubar [model]="itemsformenu">
+    <ng-template pTemplate="start">
+        <img src="assets/showcase/images/primeng.svg" height="40" class="p-mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <input type="text" pInputText placeholder="Search">
+    </ng-template>
+</p-menubar>
+
+<!----------------------------------menu panel----------------------->
+
+<p-panelMenu [model]="itemsformenu" [style]="{'width':'300px'}"></p-panelMenu>
 
