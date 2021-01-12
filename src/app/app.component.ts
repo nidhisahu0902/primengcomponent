@@ -3,6 +3,18 @@ import { PrimeNGConfig } from 'primeng/api';
 import {Message,MessageService} from 'primeng/api';
 import { PhotoserviceService } from './photoservice.service';
 import {MegaMenuItem,MenuItem} from 'primeng/api';
+import { CounrtyserviceService } from './counrtyservice.service';
+
+
+interface City {
+    name: string,
+    code: string
+}
+
+interface Country {
+    name: string,
+    code: string
+}
 
 @Component({
   selector: 'app-root',
@@ -12,6 +24,116 @@ import {MegaMenuItem,MenuItem} from 'primeng/api';
     
 })
 export class AppComponent {
+
+    /************list box */
+    
+    cities1: City[];
+
+    countries1: Country[];
+
+    selectedCity1: City;
+
+    selectedCountries1: Country[];
+
+    /*************number */
+    value1: number = 42723;
+
+    value2: number = 58151;
+
+    value3: number = 2351.35;
+
+    value4: number = 50;
+
+    value5: number = 151351;
+
+    value6: number = 115744;
+
+    value7: number = 635524;
+
+    value8: number = 732762;
+
+    value9: number = 1500;
+
+    value10: number = 2500;
+
+    value11: number = 4250;
+
+    value12: number = 5002;
+
+    value13: number = 20;
+
+    value14: number = 50;
+
+    value15: number = 10;
+
+    value16: number = 20;
+
+    value17: number = 20;
+
+    value18: number = 10.50;
+
+    value19: number = 25;
+
+    value20: number = 50;
+    /****************input text */
+    disabled: boolean = true;
+
+    value21: string;
+
+    value22: string;
+
+    value23: string;
+
+    value24: string;
+
+    value25: string = 'Disabled';
+
+    /*******************colorpicker */
+    color1: string;
+    
+    color2: string = '#1976D2';
+
+    /****************calender */
+    date1: Date;
+
+    date2: Date;
+
+    date3: Date;
+
+    date4: Date;
+
+    date5: Date;
+
+    date6: Date;
+
+    date7: Date;
+
+    date8: Date;
+
+    date9: Date;
+
+    date10: Date;
+
+    date11: Date;
+
+    date12: Date;
+
+    date13: Date;
+
+    date14: Date;
+    
+    dates: Date[];
+
+    rangeDates: Date[];
+
+    minDate: Date;
+
+    maxDate: Date;
+
+    es: any;
+
+    invalidDates: Array<Date>
+
   
   items: MenuItem[];
   itemsmega: MegaMenuItem[];
@@ -43,15 +165,49 @@ export class AppComponent {
 
   visibleSidebar5;
 
-  
+  /******************country apis */
+  selectedCountry: any;
+        
+  countries: any[];
+      
+  filteredCountries: any[];
+
+  selectedCountries: any[];
+
+  selectedCountryAdvanced: any[];
+
+  filteredBrands: any[];
 /*88888888888 show messages ***************************************/
   msgs2: Message[];
   title = 'exampl2ongprime';
 
   data: any;
   value: number = 0;
-  constructor(private primengConfig: PrimeNGConfig,private messageService: MessageService,public photoservice:PhotoserviceService) {
+  constructor(private primengConfig: PrimeNGConfig,private messageService: MessageService,public photoservice:PhotoserviceService,private countryservice :CounrtyserviceService) {
+    this.cities1 = [
+        {name: 'New York', code: 'NY'},
+        {name: 'Rome', code: 'RM'},
+        {name: 'London', code: 'LDN'},
+        {name: 'Istanbul', code: 'IST'},
+        {name: 'Paris', code: 'PRS'}
+    ];
 
+    this.countries = [
+        {name: 'Australia', code: 'AU'},
+        {name: 'Brazil', code: 'BR'},
+        {name: 'China', code: 'CN'},
+        {name: 'Egypt', code: 'EG'},
+        {name: 'France', code: 'FR'},
+        {name: 'Germany', code: 'DE'},
+        {name: 'India', code: 'IN'},
+        {name: 'Japan', code: 'JP'},
+        {name: 'Spain', code: 'ES'},
+        {name: 'United States', code: 'US'}
+    ];
+    /*************************country apis */
+    this.countryservice.getCountries().then(countries => {
+        this.countries = countries;
+    });
     /*******************chart*********** */
     this.data = {
       labels: ['A','B','C'],
@@ -79,6 +235,51 @@ export class AppComponent {
 
 
 ngOnInit() {
+
+    /********************split button */
+    this.items = [
+        {label: 'Update', icon: 'pi pi-refresh', command: () => {
+            this.update();
+        }},
+        {label: 'Delete', icon: 'pi pi-times', command: () => {
+            this.delete();
+        }},
+        {label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io'},
+        {separator:true},
+        {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']}
+    ];
+
+   /****************claender */
+   this.es = {
+    firstDayOfWeek: 1,
+    dayNames: [ "domingo","lunes","martes","miércoles","jueves","viernes","sábado" ],
+    dayNamesShort: [ "dom","lun","mar","mié","jue","vie","sáb" ],
+    dayNamesMin: [ "D","L","M","X","J","V","S" ],
+    monthNames: [ "enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre" ],
+    monthNamesShort: [ "ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic" ],
+    today: 'Hoy',
+    clear: 'Borrar'
+}
+
+let today = new Date();
+let month = today.getMonth();
+let year = today.getFullYear();
+let prevMonth = (month === 0) ? 11 : month -1;
+let prevYear = (prevMonth === 11) ? year - 1 : year;
+let nextMonth = (month === 11) ? 0 : month + 1;
+let nextYear = (nextMonth === 0) ? year + 1 : year;
+this.minDate = new Date();
+this.minDate.setMonth(prevMonth);
+this.minDate.setFullYear(prevYear);
+this.maxDate = new Date();
+this.maxDate.setMonth(nextMonth);
+this.maxDate.setFullYear(nextYear);
+
+let invalidDate = new Date();
+invalidDate.setDate(today.getDate() - 1);
+this.invalidDates = [today,invalidDate];
+
+    
 
   this.itemsformenu = [
     {
@@ -355,7 +556,33 @@ this.home = {icon: 'pi pi-home'};
   clearMessages() {
       this.msgs2 = [];
   }
+   /**********************country code apis for country code services */ 
+  filterCountry(event) {
+    //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+    let filtered : any[] = [];
+    let query = event.query;
+    for(let i = 0; i < this.countries.length; i++) {
+        let country = this.countries[i];
+        if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+            filtered.push(country);
+        }
+    }
     
+    this.filteredCountries = filtered;
+}
+
+/**********************split button */
+save(severity: string) {
+    this.messageService.add({severity: severity, summary:'Success', detail:'Data Saved'});
+}
+
+update() {
+    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});
+}
+
+delete() {
+    this.messageService.add({severity:'success', summary:'Success', detail:'Data Deleted'});
+}
 
 }
 

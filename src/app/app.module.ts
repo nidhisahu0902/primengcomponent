@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {CalendarModule} from 'primeng/calendar';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {MenubarModule} from 'primeng/menubar';
 import {RouterModule} from '@angular/router';
@@ -20,8 +22,21 @@ import {ScrollTopModule} from 'primeng/scrolltop';
 import {SidebarModule} from 'primeng/sidebar';
 import {GalleriaModule} from 'primeng/galleria';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-
+import {FormsModule} from '@angular/forms';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {CheckboxModule} from 'primeng/checkbox';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {InputNumberModule} from 'primeng/inputnumber';
+
+import {SplitButtonModule} from 'primeng/splitbutton';
+
+import {ListboxModule} from 'primeng/listbox';
+
+import {ColorPickerModule} from 'primeng/colorpicker';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,7 +60,18 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     MegaMenuModule,
     MenubarModule,
     PanelMenuModule,
-    
+    AutoCompleteModule,
+    FormsModule,
+    HttpClientModule,
+    CalendarModule,
+    ColorPickerModule,
+    CheckboxModule,
+    RadioButtonModule,
+    InputTextModule,
+    InputTextareaModule,
+    InputNumberModule,
+    ListboxModule,
+    SplitButtonModule
   
   ],
   providers: [],
