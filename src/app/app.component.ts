@@ -25,6 +25,9 @@ interface Country {
 })
 export class AppComponent {
 
+    /***************accordian */
+    activeState: boolean[] = [true, false, false];
+
     /************list box */
     
     cities1: City[];
@@ -228,7 +231,17 @@ export class AppComponent {
       };
 }
   
+ onTabClose(event) {
+        this.messageService.add({severity:'info', summary:'Tab Closed', detail: 'Index: ' + event.index})
+    }
+    
+    onTabOpen(event) {
+        this.messageService.add({severity:'info', summary:'Tab Expanded', detail: 'Index: ' + event.index});
+    }
 
+    toggle(index: number) {
+        this.activeState[index] = !this.activeState[index];
+    }
   showSuccess() {
     this.messageService.add({severity:'success', summary: 'Success', detail: 'Message Content'});
 }

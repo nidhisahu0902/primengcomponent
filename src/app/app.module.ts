@@ -29,6 +29,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {AccordionModule} from 'primeng/accordion';
 
 import {SplitButtonModule} from 'primeng/splitbutton';
 
@@ -71,7 +72,8 @@ import { HttpClientModule } from '@angular/common/http';
     InputTextareaModule,
     InputNumberModule,
     ListboxModule,
-    SplitButtonModule
+    SplitButtonModule,
+    AccordionModule
   
   ],
   providers: [],
