@@ -30,12 +30,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {AccordionModule} from 'primeng/accordion';
-
+import {DividerModule} from 'primeng/divider';
 import {SplitButtonModule} from 'primeng/splitbutton';
-
+import {FieldsetModule} from 'primeng/fieldset';
 import {ListboxModule} from 'primeng/listbox';
-
+import {SplitterModule} from 'primeng/splitter';
 import {ColorPickerModule} from 'primeng/colorpicker';
+
+import {ScrollPanelModule} from 'primeng/scrollpanel';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -73,7 +75,11 @@ import { HttpClientModule } from '@angular/common/http';
     InputNumberModule,
     ListboxModule,
     SplitButtonModule,
-    AccordionModule
+    AccordionModule,
+    DividerModule,
+    FieldsetModule,
+    SplitterModule,
+    ScrollPanelModule
   
   ],
   providers: [],
