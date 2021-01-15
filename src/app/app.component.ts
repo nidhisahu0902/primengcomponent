@@ -4,6 +4,11 @@ import {Message,MessageService} from 'primeng/api';
 import { PhotoserviceService } from './photoservice.service';
 import {MegaMenuItem,MenuItem} from 'primeng/api';
 import { CounrtyserviceService } from './counrtyservice.service';
+import { Customer, Representative } from './customer';
+
+import { CustomerserviceService } from './customerservice.service';
+import { Table } from 'primeng/table';
+
 
 
 interface City {
@@ -24,7 +29,7 @@ interface Country {
     
 })
 export class AppComponent {
-
+    
     /***************accordian */
     activeState: boolean[] = [true, false, false];
 
@@ -186,7 +191,7 @@ export class AppComponent {
 
   data: any;
   value: number = 0;
-  constructor(private primengConfig: PrimeNGConfig,private messageService: MessageService,public photoservice:PhotoserviceService,private countryservice :CounrtyserviceService) {
+  constructor(private customerservice : CustomerserviceService, private primengConfig: PrimeNGConfig,private messageService: MessageService,public photoservice:PhotoserviceService,private countryservice :CounrtyserviceService) {
     this.cities1 = [
         {name: 'New York', code: 'NY'},
         {name: 'Rome', code: 'RM'},
@@ -248,6 +253,7 @@ export class AppComponent {
 
 
 ngOnInit() {
+
 
     /********************split button */
     this.items = [
@@ -596,6 +602,7 @@ update() {
 delete() {
     this.messageService.add({severity:'success', summary:'Success', detail:'Data Deleted'});
 }
+
 
 }
 

@@ -36,7 +36,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {ListboxModule} from 'primeng/listbox';
 import {SplitterModule} from 'primeng/splitter';
 import {ColorPickerModule} from 'primeng/colorpicker';
-
+import {TableModule} from 'primeng/table';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -79,7 +79,8 @@ import { HttpClientModule } from '@angular/common/http';
     DividerModule,
     FieldsetModule,
     SplitterModule,
-    ScrollPanelModule
+    ScrollPanelModule,
+    TableModule
   
   ],
   providers: [],
